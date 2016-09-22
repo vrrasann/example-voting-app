@@ -2,7 +2,7 @@ version: "2"
 
 services:
  voting-app:
-   image: ehazlett/dockercon-voting-app
+   image: dtrnodednsr6ybe3biooeao.westus.cloudapp.azure.com/admin/voting-app-vote:latest
    ports:
      - "80"
    networks:
@@ -11,7 +11,7 @@ services:
      - "interlock.hostname=vote"
      - "interlock.domain=myenterprise.com"
  result-app:
-   image: ehazlett/dockercon-result-app
+   image: dtrnodednsr6ybe3biooeao.westus.cloudapp.azure.com/admin/voting-app-result:latest
    ports:
      - "80"
    networks:
@@ -20,7 +20,7 @@ services:
      - "interlock.hostname=results"
      - "interlock.domain=myenterprise.com"
  worker:
-   image: ehazlett/dockercon-worker
+   image: dtrnodednsr6ybe3biooeao.westus.cloudapp.azure.com/admin/voting-app-worker:latest
    networks:
      - voteapp
  redis:
