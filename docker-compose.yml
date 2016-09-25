@@ -2,7 +2,7 @@ version: "2"
 
 services:
  voting-app:
-   image: dtrnodednsr6ybe3biooeao.westus.cloudapp.azure.com/admin/voting-app-vote:latest
+   image: dockercontrdnstpal2zkqvglmc.westus.cloudapp.azure.com/admin/vote:latest
    ports:
      - "80"
    networks:
@@ -11,7 +11,7 @@ services:
      - "interlock.hostname=vote"
      - "interlock.domain=myenterprise.com"
  result-app:
-   image: dtrnodednsr6ybe3biooeao.westus.cloudapp.azure.com/admin/voting-app-result:latest
+   image: dockercontrdnstpal2zkqvglmc.westus.cloudapp.azure.com/admin/result:latest
    ports:
      - "80"
    networks:
@@ -20,7 +20,7 @@ services:
      - "interlock.hostname=results"
      - "interlock.domain=myenterprise.com"
  worker:
-   image: dtrnodednsr6ybe3biooeao.westus.cloudapp.azure.com/admin/voting-app-worker:latest
+   image: dockercontrdnstpal2zkqvglmc.westus.cloudapp.azure.com/admin/worker:latest
    networks:
      - voteapp
  redis:
@@ -29,14 +29,12 @@ services:
      - "6379"
    networks:
      - voteapp
-   container_name: redis
  db:
    image: postgres:9.4
    volumes:
      - "db-data:/var/lib/postgresql/data"
    networks:
      - voteapp
-   container_name: db
 volumes:
  db-data:
 
